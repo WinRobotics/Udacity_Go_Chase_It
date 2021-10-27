@@ -47,7 +47,7 @@ void drive_bot::init_motor_command_pub()
 void drive_bot::init_motor_service()
 {
     ROS_INFO("Service started");
-    ros::ServiceServer service_ = nh_->advertiseService("/ball_chaser/command_robot",&drive_bot::handle_drive_request,this);
+    service_ = nh_->advertiseService("/ball_chaser/command_robot",&drive_bot::handle_drive_request,this);
 }
 
 bool drive_bot::handle_drive_request(ball_chaser::DriveToTarget::Request &req, ball_chaser::DriveToTarget::Response &res)
